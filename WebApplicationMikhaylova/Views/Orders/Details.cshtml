@@ -1,0 +1,90 @@
+﻿@Styles.Render("~/Content/StyleTable.css")
+<div class="table-phone" style="height:1300px">
+    <div class="content-create"></div>
+
+    @model WebApplicationMikhaylova.Models.Orders
+
+    @{
+        ViewBag.Title = "Details";
+    }
+
+    <div class="title-table">
+        <h3 style="font-size:35px; font-weight: bold">Подробности о заказе</h3>
+        <h5 style="font-size:25px;  font-weight: bold">Представлены данные о вабранном заказе</h5>
+        <div class="button-last">
+            @Html.ActionLink("Вернуться к товарам", "Index")
+        </div>
+        <hr style="border-bottom:1px solid #7e5941" />
+    </div>  
+
+    <div class="table">
+        <dl class="dl-horizontal">
+            <dt>
+                ID корзины
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Basket.id_basket)
+            </dd>
+            <dt>
+                Почта клиента
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Users.email)
+            </dd>
+
+            <dt>
+                Сумма к оплате
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.final_price)
+            </dd>
+
+            <dt>
+                Адрес магазина
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Shops.address)
+            </dd>
+            <dt>
+                Дата доставки
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.delivery_date)
+            </dd>
+
+            <dt>
+                Статус заказа
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Status.status1)
+            </dd>
+        </dl>
+        <div style="position:absolute; top:1000px">
+            @*@Html.Action("ConsistOfBasket", new { Model.id_basket})*@
+            <div id="SweetInBasket">
+
+            </div>
+        </div>
+    </div>
+
+
+
+    @section scripts{
+        <script type="text/javascript">
+    $(function () {
+            var id = @Html.DisplayFor(model => model.Basket.id_basket)
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Action("SweetInBasket")/' + id,
+                success: function (data) {
+                    $('#SweetInBasket').replaceWith(data);
+                }
+            });
+    })
+        </script>
+    }
+    <div class="but">
+        <button class="button"> @Html.ActionLink("Редактировать данные о заказе", "Edit", new { id = Model.id_order })</button>
+    </div>
+</div>
+

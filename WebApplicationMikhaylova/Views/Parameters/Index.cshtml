@@ -1,0 +1,40 @@
+﻿@Styles.Render("~/Content/StyleTable.css")
+<div class="table-phone">
+
+    @model IEnumerable<WebApplicationMikhaylova.Models.Parameters>
+
+    @{
+        ViewBag.Title = "Index";
+    }
+    <div class="content-table">
+
+        <h2 class="title-table">Таблица "Категории"</h2>
+
+        <table class="table">
+            <tr>
+                <th>
+                    Название категории
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.parameter)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Редактировать", "Edit", new { id = item.id_parameter }) |
+                      @*  @Html.ActionLink("Подробнее", "Details", new { id = item.id_parameter }) |*@
+                        @Html.ActionLink("Удалить", "Delete", new { id = item.id_parameter })
+                    </td>
+                </tr>
+            }
+
+        </table>
+        <div class="but">
+            <button class="button" onclick="location.href = '/Parameters/Create';"> Добавить новую категорию</button>
+
+        </div>
+    </div>
+</div>

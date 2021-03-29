@@ -1,0 +1,149 @@
+﻿.table-phone {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Cormorant Garamond', serif;
+    background-color: #fbf0e6;
+}
+.content-table{
+    padding:70px;
+}
+.content-create{
+    padding:25px;
+}
+.title-table {
+    font-size: 30px;
+    text-align: center;
+    color: #714b22;
+}
+.table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    padding-top: 40px;
+    border-spacing: 25px 5px;
+}
+
+.table-phone h2 {
+    margin: 0 auto;
+    color: #714b22;
+    font-size: 25px;
+}
+
+.table-phone h6 {
+    color: #714b22;
+    font-size:18px;
+}
+
+.table tr th, .table dl dt{
+    padding-bottom:5px;
+    font-size: 22px;
+    border-bottom: 2px solid rgba(169, 82, 19, 0.25);
+    margin-bottom:7px;
+}
+    .table dl dt {
+       margin-top:10px;  
+       padding-bottom:-30px;
+    }
+    .table dl{
+        margin-top:-40px;
+        margin-bottom:-20px;        
+    }
+    .table dl dd{
+        margin-left:0px;
+        font-size:18px;
+    }
+    .table td a {
+        color: #bd4113;
+    }
+
+    .table input {
+        width: 400px;
+        font-size: 17px;
+        font-family: 'Cormorant Garamond', serif;
+    }
+    .table select {
+        width:410px;
+        font-size: 18px;
+        font-family: 'Cormorant Garamond', serif;
+    }
+    .table .description input{
+        height:150px;
+    }
+    .but, .titles-delete h6 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+.table-phone img{
+    position:absolute;
+    bottom:150px;
+    left:1000px;
+    width:300px;
+    z-index:2;
+}
+
+.button-last a {
+    font-size: 23px;
+    color: #A95A12;
+    float: left;
+    padding-left: 85px;
+}
+.button a, .button input {
+    font-size: 23px;
+    color: #A95A12;
+}
+.button {
+    margin-top: 60px;
+    padding: 15px;
+    height: 80px;
+    width: 350px;
+    background-color: #F8D7B1;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 10px 10px 20px 5px rgba(169, 82, 19, 0.25);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 23px;
+    color: #A95A12;
+    transition: all 700ms ease;
+}
+.button:hover {
+    box-shadow: 15px 15px 30px 7px rgba(169, 82, 19, 0.25);
+    background-color: white;
+    color: #f86a36;
+}
+
+.button:active {
+    outline: none;
+    background-color: #F8D7B1;
+    color: white;
+    transition: all 0s ease;
+}
+.table-phone button {
+    margin-top:60px;
+    padding:15px;
+    height: 80px;
+    background-color: #F8D7B1;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 10px 10px 20px 5px rgba(169, 82, 19, 0.25);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 23px;
+    color: #A95A12;
+    transition: all 700ms ease;
+}
+
+    .table-phone button:hover {
+        box-shadow: 15px 15px 30px 7px rgba(169, 82, 19, 0.25);
+        background-color: white;
+        color: #f86a36;
+    }
+
+    .table-phone button:active {
+        outline: none;
+        background-color: #F8D7B1;
+        color: white;
+        transition: all 0s ease;
+    }

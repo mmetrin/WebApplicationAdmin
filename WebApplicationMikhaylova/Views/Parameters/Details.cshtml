@@ -1,0 +1,37 @@
+﻿@Styles.Render("~/Content/StyleTable.css")
+<div class="table-phone">
+    <div class="content-create"></div>
+    @model WebApplicationMikhaylova.Models.Parameters
+
+    @{
+        ViewBag.Title = "Details";
+    }
+    <div class="title-table" style="padding-top:-20px">
+        <h3>Подробности о категории</h3>
+        <h5>Представлены данные о вабранной категории товаров</h5>
+        <div class="button-last">
+            @Html.ActionLink("Вернуться к товарам", "Index")
+        </div>
+        <hr />
+    </div>
+
+    <div class="table">
+        <dl class="dl-horizontal">
+            <dt>
+                Название категории
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.parameter)
+            </dd>
+
+        </dl>
+    </div>
+    @*<p>
+        @Html.ActionLink("Редактировать", "Edit", new { id = Model.id_parameter }) |
+        @Html.ActionLink("Вернуться к списку категорий товаров", "Index")
+    </p>*@
+    <div class="but">
+        <button class="button"> @Html.ActionLink("Редактировать данные о категории", "Edit", new { id = Model.id_parameter })</button>
+    </div>
+</div>

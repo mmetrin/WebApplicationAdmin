@@ -1,0 +1,64 @@
+﻿@Styles.Render("~/Content/StyleTable.css")
+<div class="table-phone">
+
+    @model IEnumerable<WebApplicationMikhaylova.Models.Products>
+
+    @{
+        ViewBag.Title = "Index";
+    }
+    <div class="content-table">
+
+        <h2 class="title-table">Таблица "Товары"</h2>
+
+        <table class="table">
+            <tr>
+                <th>
+                    Название товара
+                </th>
+                @*<th>
+                       Описание товара
+                    </th>*@
+                <th>
+                    Цена
+                </th>
+                @*<th>
+                       Вес
+                    </th>*@
+                <th>
+                    Категория
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.product_name)
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.description)
+                        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.price)
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.weight)
+                        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Parameters.parameter)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Редактировать", "Edit", new { id = item.id_product }) |
+                        @Html.ActionLink("Подробнее", "Details", new { id = item.id_product }) |
+                        @Html.ActionLink("Удалить", "Delete", new { id = item.id_product }) 
+
+</tr>
+            }
+
+        </table>
+        <div class="but">
+            <button class="button" onclick="location.href = '/Products/Create';"> Добавить новый товар</button>
+
+        </div>
+    </div>
+</div>

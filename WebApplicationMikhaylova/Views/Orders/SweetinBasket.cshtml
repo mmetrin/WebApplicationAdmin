@@ -1,0 +1,84 @@
+﻿@model IEnumerable<WebApplicationMikhaylova.Models.BasketProduct>
+
+@{
+    ViewBag.Title = "Index";
+}
+@Styles.Render("~/Content/css")
+<h2>Состав корзины</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+    <tr>
+        <th>
+            ID корзины
+        </th>
+        <th>
+            Категория товара
+        </th>
+        <th>
+            Название товара
+        </th>
+        <th>
+            Описание товара
+        </th>
+        <th>
+            Цена
+        </th>
+        <th>
+            Вес
+        </th>
+        <th>
+            Кол-во
+        </th>
+
+        @*<th>
+            @Html.DisplayNameFor(model => model.Basket.id_basket)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Shops.address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status.status1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Users.email)
+        </th>*@
+    </tr>
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_basket)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Products.Parameters.parameter)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Products.product_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Products.description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Products.price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Products.weight)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.count)
+        </td>
+        @*<td>
+            @Html.ActionLink("Редактировать", "Edit", new { id=item.id_order }) |
+            @Html.ActionLink("Подробнее", "Details", new { id=item.id_order }) |
+            @Html.ActionLink("Удалить", "Delete", new { id=item.id_order })
+        </td>*@
+    </tr>
+        }
+    }
+</table>

@@ -1,0 +1,72 @@
+﻿@Styles.Render("~/Content/StyleTable.css")
+@model IEnumerable<WebApplicationMikhaylova.Models.Orders>
+<div class="table-phone">
+
+    @{
+        ViewBag.Title = "Index";
+    }
+    <div class="content-table">
+        <h2 class="title-table">Таблицы "Заказы"</h2>
+
+        <table class="table">
+            <tr>
+                <th>
+                    ID корзины
+                </th>
+                <th>
+                    Почта клиента
+                </th>
+
+                <th>
+                    Сумма к оплате
+                </th>
+
+                <th>
+                    Магазин по адресу
+                </th>
+                <th>
+                    Дата доставки
+                </th>
+                <th>
+                    Статус заказа
+                </th>
+
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Basket.id_basket)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Users.email)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.final_price)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Shops.address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.delivery_date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status.status1)
+                    </td>
+
+                    <td>
+                        @Html.ActionLink("Редактировать", "Edit", new { id = item.id_order }) |
+                        @Html.ActionLink("Подробнее", "Details", new { id = item.id_order }) |
+                        @Html.ActionLink("Удалить", "Delete", new { id = item.id_order })
+                    </td>
+                </tr>
+            }
+        </table>
+        <div class="but">
+            <button class="button" onclick="location.href = '/Orders/Create';"> Добавить новый заказ</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+﻿@Styles.Render("~/Content/StyleTable.css")
+<div class="table-phone">
+    @model IEnumerable<WebApplicationMikhaylova.Models.Shops>
+
+    @{
+        ViewBag.Title = "Index";
+    }
+    <div class="content-table">
+        <h2 class="title-table">Таблица "Магазины"</h2>
+        <table class="table">
+            <tr>
+                <th>
+                    Адрес магазина
+                </th>
+                <th>
+                    Время работы
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.time_of_work)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Редактировать", "Edit", new { id = item.id_shop }) |
+                        @Html.ActionLink("Подробнее", "Details", new { id = item.id_shop }) |
+                        @Html.ActionLink("Удалить", "Delete", new { id = item.id_shop })
+                    </td>
+                </tr>
+            }
+
+        </table>
+        <div class="but">
+            <button class="button" onclick="location.href = '/Shops1/Create';"> Добавить новый магазин</button>
+        </div>
+    </div>
+</div>

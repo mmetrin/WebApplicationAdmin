@@ -1,0 +1,41 @@
+﻿@Styles.Render("~/Content/StyleTable.css")
+<div class="table-phone">
+    <div class="content-create"></div>
+    @model WebApplicationMikhaylova.Models.Shops
+
+    @{
+        ViewBag.Title = "Details";
+    }
+    <div class="title-table" style="padding-top:-20px">
+        <h3>Подробности о магазине</h3>
+        <h5>Представлены данные о вабранном магазине</h5>
+        <div class="button-last">
+            @Html.ActionLink("Вернуться к магазинам", "Index")
+        </div>
+        <hr />
+    </div>
+    <div class="table">
+        <dl class="dl-horizontal">
+            <dt>
+                Адрес магазина
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.address)
+            </dd>
+
+            <dt>
+                Время работы
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.time_of_work)
+            </dd>
+
+        </dl>
+    </div>
+    <div class="but">
+        <button class="button"> @Html.ActionLink("Редактировать данные о магазине", "Edit", new { id = Model.id_shop })</button>
+    </div>
+</div>
+
